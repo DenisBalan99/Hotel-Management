@@ -27,9 +27,6 @@ public class HotelService {
     }
 
     public void deleteHotel(Long id_hotel) {
-        // TODO mutat valoare variabila in app.proprieties
-        // de obtinut in java cu @Value
-
         String folder = "Uploads";
 
         String fileName = hotelRepository.findById(id_hotel).get().getName();

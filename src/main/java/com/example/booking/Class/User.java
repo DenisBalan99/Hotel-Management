@@ -36,30 +36,6 @@ public class User {
     private String password;
     private String roles;
 
-    //---------------------------------------
-    private byte[] image;
-
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
-    //---------------------------------------
-
-//    public User(Long id, String firstName, String lastName, String cnp, String email, String telephone, String password) {
-//        this.id = id;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.cnp = cnp;
-//        this.email = email;
-//        this.telephone = telephone;
-//        this.userName = email;
-//        this.password = password;
-//        this.roles = "ROLE_USER";
-//    }
-
     public User(String user, String role) {
         this.firstName = user;
         this.lastName = user;

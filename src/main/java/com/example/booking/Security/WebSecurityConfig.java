@@ -54,23 +54,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder getPasswordEncoder() {
         return NoOpPasswordEncoder.getInstance();
     }
-
-//    class PasswordEnc implements PasswordEncoder {
-//
-//        @Override
-//        public String encode(CharSequence charSequence) {
-//            return null;
-//        }
-//
-//        @Override
-//        public boolean matches(CharSequence charSequence, String s) {
-//            return false;
-//        }
-//    }
-//
-//    @Bean
-//    public PasswordEncoder getPasswordEncoder() {
-//        return new PasswordEnc();
-//    }
-
 }
