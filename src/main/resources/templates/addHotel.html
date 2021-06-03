@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="https://www.thymeleaf.org/extras/spring-security"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel = "stylesheet" type="text/css" th:href="@{/css/addHotel.css}">
+  <link rel = "stylesheet" type="text/css" th:href="@{/css/topNav.css}">
+</head>
+
+<body>
+
+  <div class="topnav">
+    <a href="/register">Register</a>
+    <a href="/home">Home</a>
+    <a href="/login">Login</a>
+    <form th:action="@{/logout}" method="post">
+      <button sec:authorize="isAuthenticated()" type="submit" >Logout</button>
+    </form>
+    <div sec:authorize="hasRole('ROLE_ADMIN')">
+      <a href="/addhotel">Add Hotel</a>
+    </div>
+  </div>
+
+  <div>
+    <img th:src="@{/images/addHotel.jpg}" class="bgImage">
+  </div>
+  <div>
+    <form action="#" th:action="@{/addhotel}" th:object="${hotel}" enctype="multipart/form-data" th:method="POST">
+      <div class="addHotelbox">
+        <input type="hidden" th:field="*{id}">
+        <div>
+          <h2>Name :</h2>
+          <input type="text" th:field="*{name}" placeholder="Name"/>
+        </div>
+        <div>
+          <h2>Description :</h2>
+          <textarea th:field="*{description}" rows="5" cols="34" placeholder="A short description"></textarea>
+        </div>
+        <div>
+          <h2>Location :</h2>
+          <input type="text" th:field="*{location}" placeholder="Location"/>
+        </div>
+        <div>
+          <h2>Price :</h2>
+          <input type="text" th:field="*{price}" placeholder="Price"/>
+        </div>
+        <div>
+          <h2>Email to contact:</h2>
+          <input type="text" th:field="*{contactEmail}" placeholder="Email"/>
+        </div>
+        <div>
+          <input type="file" name="imageFile"/>
+        </div>
+
+        <div>
+          <h2>
+            <button type="submit">Register</button>
+          </h2>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

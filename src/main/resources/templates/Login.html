@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="https://www.thymeleaf.org/extras/spring-security"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel = "stylesheet" type="text/css" th:href="@{/css/Login.css}">
+    <link rel = "stylesheet" type="text/css" th:href="@{/css/topNav.css}">
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a href="/register">Register</a>
+        <a href="/home">Home</a>
+        <a href="/login">Login</a>
+        <form th:action="@{/logout}" method="post">
+            <button sec:authorize="isAuthenticated()" type="submit" >Logout</button>
+        </form>
+        <div sec:authorize="hasRole('ROLE_ADMIN')">
+            <a href="/addhotel">Add Hotel</a>
+        </div>
+    </div>
+
+    <div>
+        <img th:src="@{/images/login.jpg}" alt="" class="bgImage">
+    </div>
+    <form th:action="@{/login}" method="post">
+        <div class="loginbox">
+            <img th:src="@{/images/avatar.jpg}" class="avatar">
+                <h1>Login Here</h1>
+                <form>
+                    <p>Email</p>
+                    <input type="text" name="username" placeholder="Enter Email">
+                    <p>Password</p>
+                    <input type="password" name="password" placeholder="Enter Password">
+                    <div th:if="${param.error}">
+                        <p id="warnMsg" class="pInvalid">Invalid email or password </p><br>
+                    </div>
+                    <button type="submit" class="btn btn-success" >Log in</button><br>
+                    <a href="#">Lost your password?</a><br>
+                    <a href="/register">Don't have an account?</a>
+                </form>
+        </div>
+    </form>
+</body>
+
+</html>

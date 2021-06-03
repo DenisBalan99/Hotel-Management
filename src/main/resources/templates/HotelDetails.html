@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="https://www.thymeleaf.org/extras/spring-security"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Details</title>
+    <link rel = "stylesheet" type="text/css" th:href="@{/css/HotelDetails.css}">
+    <link rel = "stylesheet" type="text/css" th:href="@{/css/topNav.css}">
+</head>
+<body>
+
+    <div class="topnav">
+        <a href="/register">Register</a>
+        <a href="/home">Home</a>
+        <a href="/login">Login</a>
+        <form th:action="@{/logout}" method="post">
+            <button sec:authorize="isAuthenticated()" type="submit" >Logout</button>
+        </form>
+        <div sec:authorize="hasRole('ROLE_ADMIN')">
+            <a href="/addhotel">Add Hotel</a>
+        </div>
+    </div>
+
+    <img th:src="@{/images/HotelDetails.jpg}" class="bgImage">
+
+    <div class="details" th:object="${hotel}">
+        <div class="describebox">
+            <h1>Describe</h1>
+            <div class="fitText" th:text="${hotel.description}"></div>
+        </div>
+
+        <div class="priceList">
+            <h1>Prices</h1>
+            <div class="fitPrice" th:text="${hotel.price*4.93} + ' RON'"></div>
+            <div class="fitPrice" th:text="${hotel.price} + ' €'"></div>
+            <div class="fitPrice" th:text="${hotel.price*1.22} + ' $'"></div>
+        </div>
+
+        <div class="location">
+            <h1>Location</h1>
+            <h2>Click to zoom</h2>
+        </div>
+
+        <div class="contactBox">
+            <h1 th:text="Contact+': '+${hotel.contactEmail}"></h1>
+        </div>
+
+        <div>
+            <img class="hotelImage" id="myImg" th:src="@{/Uploads/{imgName}(imgName=${hotel.getImageSource()})}"/>
+        </div>
+
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+
+    </div>
+</body>
+</html>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+</script>

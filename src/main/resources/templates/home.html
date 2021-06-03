@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="https://www.thymeleaf.org/extras/spring-security"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <link sec:authorize="hasRole('ROLE_ADMIN')" rel = "stylesheet" type="text/css" th:href="@{/css/HomeAdmin.css}">-->
+<!--    <link sec:authorize="hasRole('ROLE_USER')" rel = "stylesheet" type="text/css" th:href="@{/css/HomeUser.css}">-->
+    <link rel = "stylesheet" type="text/css" th:href="@{/css/HomeAdmin.css}">
+    <link rel = "stylesheet" type="text/css" th:href="@{/css/topNav.css}">
+
+</head>
+<body>
+    <div class="topnav">
+        <a href="/register">Register</a>
+        <a href="/home">Home</a>
+        <a href="/login">Login</a>
+        <form th:action="@{/logout}" method="post">
+            <button  type="submit" >Logout</button>
+        </form>
+        <div sec:authorize="hasRole('ROLE_ADMIN')">
+            <a href="/addhotel">Add Hotel</a>
+        </div>
+    </div>
+
+    <img th:src="@{/images/HotelDetails.jpg}" class="bgImage">
+
+    <div class="name">
+        <h1>List With Hotels</h1>
+    </div>
+
+    <div class="hotelsBox">
+        <div class="info">
+            <table class="table_content">
+                <div>
+                    <thead>
+                        <th> Name </th>
+                        <th> Location </th>
+                        <th> Price </th>
+                        <th> Info </th>
+                        <th sec:authorize="hasRole('ROLE_ADMIN')"> Delete </th>
+                    </thead>
+                </div>
+                <div>
+                    <tr th:each="hotel : ${hotels}">
+                        <td><span th:text="${hotel.name}"> Name |  </span> </td>
+                        <td><span th:text="${hotel.location}"> Location | </span> </td>
+                        <td><span th:text="@{{price}€(price=${hotel.price})}"> Price | </span> </td>
+                        <td><a th:href="@{/home/more/{id}(id=${hotel.id})}">Info</a> </td>
+                        <td sec:authorize="hasRole('ROLE_ADMIN')"><a class="deleteColor" th:href="@{/home/deleteHotel/{id_hotel}(id_hotel=${hotel.id})}">Delete</a></td>
+<!--                        <td><span th:image="${hotel.image}">Image</span></td>-->
+                    </tr>
+                </div>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

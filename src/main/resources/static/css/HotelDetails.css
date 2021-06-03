@@ -1,0 +1,240 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100%;
+    overflow: hidden;
+}
+
+.describebox{
+    width: 450px;
+    height: 450px;
+    border-radius: 300px 300px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    opacity: 0.8;
+    background: #1545b1;
+    color: #fff;
+    top: 50%;
+    left: 20%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+.describebox:hover{
+    background: #2155cd;
+    transition: 0.2s;
+}
+.fitText {
+    word-wrap: break-word;
+}
+
+.priceList{
+    width: 450px;
+    height: 450px;
+    border-radius: 300px 300px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    opacity: 0.8;
+    background: #1545b1;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+.priceList:hover{
+    background: #2155cd;
+    transition: 0.2s;
+}
+.fitPrice{
+    text-align: center;
+    font-size: 50px;
+}
+
+.location{
+    width: 450px;
+    height: 450px;
+    border-radius: 300px 300px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 1);
+    opacity: 0.8;
+    background: #1545b1;
+    color: #fff;
+    top: 50%;
+    left: 80%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+.location:hover{
+    background: #2155cd;
+    transition: 0.2s;
+}
+.location h2{
+    text-align: center;
+    position: relative;
+    font-size: 30px;
+    top: 247px;
+}
+
+.details h1{
+    text-align: center;
+    position: relative;
+    font-size: 30px;
+    top: -70px;
+}
+
+.bgImage {
+
+    min-height: 100%;
+    min-width: 1024px;
+
+    width: 100%;
+    height: auto;
+
+    position: fixed;
+    top: 45px;
+    left: 0;
+}
+
+.hotelImage{
+    width: 330px;
+    height: 330px;
+    border-radius: 300px 300px;
+    position: fixed;
+    top: 305px;
+    left: 1370px;
+}
+
+.hotelImage:hover{
+    transform: scale(1.36);
+    transition: 0.2s;
+}
+/*.hotelImage:hover:active{*/
+/*    !*width: 400px;*!*/
+/*    !*height: 400px;*!*/
+/*    transform: scale(1.6);*/
+/*    border-radius: unset;*/
+/*}*/
+
+.loginbox input:hover {
+    background: #2952b1;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+    /*border-radius: 5px;*/
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/*#myImg:hover {opacity: 0.7;}*/
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 1000px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+.contactBox {
+    width: 400px;
+    height: 10px;
+    background: #1545b1;
+    color: #fff;
+    top: 80%;
+    left: 40%;
+    position: absolute;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding-top: 55px;
+    text-align: center;
+}

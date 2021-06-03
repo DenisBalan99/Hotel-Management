@@ -1,0 +1,124 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bgImage{
+    min-height: 100%;
+    min-width: 1152px;
+
+    width: 100%;
+    height: auto;
+
+    position: fixed;
+    top: 45px;
+    left: 0;
+}
+
+.addHotelbox{
+    width: 320px;
+    height: 620px;
+    background: linear-gradient(#d58e55, #625c97, #35305f);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+h2{
+    margin: 0;
+    font-size: 18px;
+}
+
+.addHotelbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.addHotelbox input{
+    width: 100%;
+    margin-bottom: 20px;
+    background: #625c97;
+}
+
+.addHotelbox input::placeholder{
+    color: black;
+}
+
+.addHotelbox input[type="text"]:hover , input[type="password"]:hover{
+    width: 100%;
+    margin-bottom: 20px;
+    background: #625c97;
+}
+
+.addHotelbox button{
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-bottom: 20px;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.addHotelbox input[type="text"] , input[type="password"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 35px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.addHotelbox input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #c12f2f;
+    color: #fff;
+    font-size: 18px;
+}
+
+.addHotelbox button[type="submit"]:hover{
+    cursor: pointer;
+    background: #bd5f5f;
+    color: #fff;
+}
+
+.addHotelbox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.addHotelbox a:hover{
+    color: #bd5f5f;
+}
+
+.addHotelbox textarea {
+    background: #625c97;
+    color: white;
+    resize: none;
+}
+.addHotelbox textarea::placeholder {
+    color: black;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="https://www.thymeleaf.org/extras/spring-security"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel = "stylesheet" type="text/css" th:href="@{/css/Register.css}">
+    <link rel = "stylesheet" type="text/css" th:href="@{/css/topNav.css}">
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a href="/register">Register</a>
+        <a href="/home">Home</a>
+        <a href="/login">Login</a>
+        <form th:action="@{/logout}" method="post">
+            <button sec:authorize="isAuthenticated()" type="submit" >Logout</button>
+        </form>
+        <div sec:authorize="hasRole('ROLE_ADMIN')">
+            <a href="/addhotel">Add Hotel</a>
+        </div>
+    </div>
+
+    <div>
+        <img th:src="@{/images/register.jpg}" alt="" class="bgImage">
+    </div>
+    <div>
+        <form action="#" th:action="@{/register}" th:object="${user}" th:method="POST">
+            <div class="registerbox">
+                <input type="hidden" th:field="*{id}">
+                <div>
+                    <h2>First Name :</h2>
+                        <input type="text" th:field="*{firstName}" placeholder="Enter First Name"/>
+                </div>
+                <div>
+                    <h2>Last Name :</h2>
+                        <input type="text" th:field="*{lastName}" placeholder="Enter Last Name"/>
+                </div>
+                <div>
+                    <h2>CNP :</h2>
+                        <input type="text" th:field="*{cnp}" placeholder="Enter CNP"/>
+                </div>
+                <div>
+                    <h2>Email :</h2>
+                        <input type="text" th:field="*{email}" placeholder="Enter Email"/>
+                </div>
+                <div>
+                    <h2>Telephone :</h2>
+                        <input type="text" th:field="*{telephone}" placeholder="Enter Telephone"/>
+                </div>
+                <div>
+                    <h2>Password :</h2>
+                        <input type="password" th:field="*{password}" placeholder="Password"/>
+                </div>
+
+                <div>
+                    <h2>
+                        <button type="submit">Register</button>
+                    </h2>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
