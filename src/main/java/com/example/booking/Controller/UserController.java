@@ -1,17 +1,12 @@
 package com.example.booking.Controller;
 
-import com.example.booking.Class.Hotel;
 import com.example.booking.Class.User;
 import com.example.booking.Service.HotelService;
 import com.example.booking.Service.UserService;
-import org.dom4j.rule.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
