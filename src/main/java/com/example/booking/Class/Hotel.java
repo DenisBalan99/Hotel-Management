@@ -1,13 +1,8 @@
 package com.example.booking.Class;
 
-import org.springframework.web.multipart.MultipartFile;
-
 import javax.persistence.*;
-import javax.validation.Path;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
-import java.io.UnsupportedEncodingException;
-import java.util.Base64;
 
 @Entity
 @Table(name = "HOTEL")
