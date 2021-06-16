@@ -1,6 +1,6 @@
 package com.example.booking.Controller;
 
-import com.example.booking.Class.Hotel;
+import com.example.booking.Entity.Hotel;
 import com.example.booking.Service.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package com.example.booking.Class;
+package com.example.booking.Entity;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

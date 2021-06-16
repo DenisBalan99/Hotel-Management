@@ -1,4 +1,4 @@
-package com.example.booking.Class;
+package com.example.booking.Entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;

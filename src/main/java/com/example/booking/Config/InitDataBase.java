@@ -1,7 +1,7 @@
 package com.example.booking.Config;
 
-import com.example.booking.Class.Hotel;
-import com.example.booking.Class.User;
+import com.example.booking.Entity.Hotel;
+import com.example.booking.Entity.User;
 import com.example.booking.Repository.HotelRepository;
 import com.example.booking.Repository.UserRepository;
 import org.slf4j.Logger;

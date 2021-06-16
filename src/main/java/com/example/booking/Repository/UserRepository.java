@@ -1,6 +1,6 @@
 package com.example.booking.Repository;
 
-import com.example.booking.Class.User;
+import com.example.booking.Entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
