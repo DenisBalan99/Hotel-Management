@@ -2,6 +2,7 @@ package com.example.booking;
 
 import com.example.booking.Entity.ObjClass;
 import com.example.booking.Controller.JsonPlaceHolderController;
+import com.example.booking.Entity.csvObj;
 import com.example.booking.Service.CSVService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -10,6 +11,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 @SpringBootTest
 class BookingApplicationTests {
@@ -56,4 +59,10 @@ class BookingApplicationTests {
         Assertions.assertNotNull(list);
     }
 
+    @Test
+    void testingCsvDataBase() {
+        List<csvObj> csvObjs = csvService.getEmp();
+
+        Assertions.assertFalse(csvObjs.isEmpty());
+    }
 }

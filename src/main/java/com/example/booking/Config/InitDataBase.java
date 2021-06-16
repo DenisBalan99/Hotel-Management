@@ -2,6 +2,8 @@ package com.example.booking.Config;
 
 import com.example.booking.Entity.Hotel;
 import com.example.booking.Entity.User;
+import com.example.booking.Entity.csvObj;
+import com.example.booking.Repository.CsvObjRepository;
 import com.example.booking.Repository.HotelRepository;
 import com.example.booking.Repository.UserRepository;
 import org.slf4j.Logger;
@@ -27,6 +29,13 @@ public class InitDataBase {
         return args -> {
             log.info("Create admin" + userRepository.save(new User("admin")));
             log.info("Create user" + userRepository.save(new User("user", "ROLE_USER")));
+        };
+    }
+
+    @Bean
+    CommandLineRunner initCsvDB(CsvObjRepository csvObjRepository){
+        return args -> {
+          log.info("Create employer" + csvObjRepository.save(new csvObj(0L, "admin", "admin", "admin", 100L)));
         };
     }
 }
